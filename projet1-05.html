@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Squelette</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+
+        <p>Heure FR : {{calculFR}}</p>
+        <p>Heure US : {{calculUS}}</p>
+        
+
+
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    FR: new Date().toLocaleTimeString(),
+                    US: new Date().toLocaleTimeString('en-US')
+                }
+            },
+            computed:{
+                calculFR() {
+                    
+                        return this.FR
+                    
+                },
+                calculUS() {
+                    
+                    return this.US
+                
+            }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
